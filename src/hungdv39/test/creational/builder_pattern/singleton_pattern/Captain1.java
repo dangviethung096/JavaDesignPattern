@@ -1,6 +1,4 @@
-package hungdv39.test.singleton_pattern;
-
-import java.util.PrimitiveIterator;
+package hungdv39.test.creational.builder_pattern.singleton_pattern;
 
 public class Captain1 {
     private Captain1() {

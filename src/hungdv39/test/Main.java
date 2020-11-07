@@ -1,6 +1,6 @@
 package hungdv39.test;
 
-import hungdv39.test.singleton_pattern.Captain1;
+import hungdv39.test.creational.builder_pattern.singleton_pattern.Captain1;
 
 public class Main {
 

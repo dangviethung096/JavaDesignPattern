@@ -1,6 +1,6 @@
-package hungdv39.test.builder_pattern.modified;
+package hungdv39.test.creational.builder_pattern.modified;
 
-public class Product {
+public final class Product {
     private String startUpMessage;
     private String bodyType;
     private int noOfWheels;

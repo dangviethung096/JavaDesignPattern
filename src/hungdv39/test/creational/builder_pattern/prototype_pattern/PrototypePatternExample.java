@@ -1,4 +1,4 @@
-package hungdv39.test.prototype_pattern;
+package hungdv39.test.creational.builder_pattern.prototype_pattern;
 
 public class PrototypePatternExample {
     public static void main(String[] args) throws CloneNotSupportedException {

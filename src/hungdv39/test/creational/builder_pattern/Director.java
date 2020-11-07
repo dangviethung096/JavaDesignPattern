@@ -1,4 +1,4 @@
-package hungdv39.test.builder_pattern;
+package hungdv39.test.creational.builder_pattern;
 
 public class Director {
     Builder builder;

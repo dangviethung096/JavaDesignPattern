@@ -1,4 +1,4 @@
-package hungdv39.test.builder_pattern.modified;
+package hungdv39.test.creational.builder_pattern.modified;
 
 public class BuilderPatternModifiedExample {
     public static void main(String[] args) {

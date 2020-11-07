@@ -1,4 +1,4 @@
-package hungdv39.test.singleton_pattern;
+package hungdv39.test.creational.builder_pattern.singleton_pattern;
 
 public final class Captain2 {
     private static Captain2 captain;
