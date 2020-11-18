@@ -1,4 +1,4 @@
-package hungdv39.test.creational.builder_pattern.fatory_method;
+package hungdv39.test.creational.builder_pattern.fatory_method.modified;
 
 public class Tiger implements Animal {
     @Override

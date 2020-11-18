@@ -1,4 +1,4 @@
-package hungdv39.test.creational.builder_pattern;
+package hungdv39.test.creational.builder_pattern.builder_pattern;
 
 public interface Builder {
     void startUpOperations();

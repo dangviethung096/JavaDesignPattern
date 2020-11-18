@@ -1,4 +1,4 @@
-package hungdv39.test.creational.builder_pattern.modified;
+package hungdv39.test.creational.builder_pattern.builder_pattern.modified;
 
 public class CarBuilder implements ModifiedBuilder {
     private String startUpMessage = "Start building the product";
