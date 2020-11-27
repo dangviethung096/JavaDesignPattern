@@ -1,11 +1,14 @@
 package hungdv39.test;
 
-import hungdv39.test.creational.builder_pattern.singleton_pattern.Captain1;
+import java.util.HashMap;
 
 public class Main {
 
     public static void main(String[] args) {
-        Captain1.dummyMethod();
-        Captain1.getCaptain();
+        HashMap<String, Main> map = new HashMap<>();
+
+        map.put("Ahihi", null);
+
+        System.out.println(map.get("Ahihi"));
     }
 }
