@@ -4,47 +4,38 @@ import java.util.Random;
 
 public class FlyweightPatternExample {
     public static void main(String[] args) throws Exception {
-        RobotFactory robotFactory = new RobotFactory();
-        System.out.println("\nFlyweight pattern\n");
         Robot myRobot;
-        // Small
+        // small
         for (int i = 0; i < 3; i++) {
-            myRobot = RobotFactory.getRobotFromFactory("small");
-            Thread.sleep(100);
-            myRobot.showMe(getRandomColor());
+            myRobot = RobotFactory.getRobotFromFactory("Small");
+            Thread.sleep(200);
+            myRobot.showMe(randomColor());
         }
-
-        System.out.println("\nNumber of created : " + robotFactory.totalObjectsCreated());
-        // Large
+        // large
         for (int i = 0; i < 5; i++) {
-            myRobot = RobotFactory.getRobotFromFactory("large");
-            Thread.sleep(100);
-            myRobot.showMe(getRandomColor());
+            myRobot = RobotFactory.getRobotFromFactory("Large");
+            Thread.sleep(200);
+            myRobot.showMe(randomColor());
         }
-
-        System.out.println("\nNumber of created : " + robotFactory.totalObjectsCreated());
-        // Fixed
+        // fixed
         for (int i = 0; i < 4; i++) {
-            myRobot = RobotFactory.getRobotFromFactory("fixed");
-            Thread.sleep(100);
-            myRobot.showMe(getRandomColor());
+            myRobot = RobotFactory.getRobotFromFactory("Fixed");
+            Thread.sleep(99);
+            myRobot.showMe(randomColor());
         }
 
-        System.out.println("\nNumber of created : " + robotFactory.totalObjectsCreated());
+        System.out.println("Number of constructed robot = " + RobotFactory.totalObjectsCreated());
+
     }
 
-    public static String getRandomColor() {
-        Random r = new Random();
-        int val = r.nextInt() % 3;
-        if (val == 0) {
+    static Random r = new Random();
+
+    public static String randomColor() {
+        int val = r.nextInt();
+        if (val % 2 == 0) {
             return "red";
-        } else if (val == 1) {
+        } else {
             return "blue";
-        } else if (val == 2) {
-            return "grey";
         }
-
-        return "green";
     }
-
 }

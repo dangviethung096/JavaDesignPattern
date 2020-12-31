@@ -1,46 +1,38 @@
 package hungdv39.test.flyweight_pattern;
 
-
 import java.util.HashMap;
 
 public class RobotFactory {
-    private static HashMap<String, Robot> robotHashMap;
-    private static int totalCreated = 0;
+    private final static HashMap<String, Robot> robots;
 
-    public RobotFactory () {
-        robotHashMap = new HashMap<>();
+    static {
+        robots = new HashMap<>();
     }
 
-    public int totalObjectsCreated() {
-        return robotHashMap.size();
+    public static int totalObjectsCreated() {
+        return robots.size();
     }
-
 
     public static synchronized Robot getRobotFromFactory(String robotType) throws Exception {
-        Robot robotCategory = robotHashMap.get(robotType);
+        Robot robotCategory = robots.get(robotType);
         if (robotCategory == null) {
             switch (robotType) {
-                case "small":
-                    System.out.println("\nDon't have small robot");
+                case "Small":
                     robotCategory = new SmallRobot();
                     break;
-                case "large":
-                    System.out.println("\nDon't have large robot");
+                case "Large":
                     robotCategory = new LargeRobot();
                     break;
-                case "fixed":
-                    System.out.println("\nDon't have fixed robot");
+                case "Fixed":
                     robotCategory = new FixedSizeRobot();
                     break;
                 default:
-                    System.out.println("\nCannot create new robot. It's not supported robot type!");
-                    throw new Exception("Cannot create new robot. It's not supported robot type");
+                    throw new Exception("Wrong robot type: " + robotType);
             }
-
-            robotHashMap.put(robotType, robotCategory);
-
+            System.out.print("\nCreate new robot type: " + robotType);
+            robots.put(robotType, robotCategory);
         } else {
-            System.out.print("\nRobot " + robotType + " is exist and coloring it");
+            System.out.print("Found old robot: " + robotType);
         }
 
         return robotCategory;
